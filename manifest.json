@@ -1,0 +1,15 @@
+{
+  "author": "igorlogius",
+  "homepage_url": "https://github.com/igorlogius/group-same-container-tabs",
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": {
+    "256": "icon.png"
+  },
+  "description": "group tabs which use the same container aka. cookieStore",
+  "manifest_version": 2,
+  "name": "Group Same Container Tabs",
+  "permissions": ["cookies", "tabs", "menus"],
+  "version": "1.0.0"
+}
