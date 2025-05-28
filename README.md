@@ -2,4 +2,4 @@
 
 [Report a bug, make a suggestion or ask a question](https://github.com/igorlogius/igorlogius/issues/new/choose)
 
-https://github.com/user-attachments/assets/9975c357-a5aa-4609-a676-b3988c641046
+[demo-2025-05-28_16.53.37.webm](https://github.com/user-attachments/assets/1fa31ea1-7330-4037-a581-5d98badc1a0f)
