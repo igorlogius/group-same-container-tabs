@@ -1,11 +1,21 @@
 /* global browser */
 
 async function grpTabsByCookieStore(all_tabs, cookieStoreIds) {
-  cookieStoreIds.forEach((cookieStoreId) => {
+  cookieStoreIds.forEach(async (cookieStoreId) => {
     const tabIds = all_tabs
       .filter((t) => t.cookieStoreId === cookieStoreId)
       .map((t) => t.id);
-    browser.tabs.group({ tabIds });
+    const grpId = await browser.tabs.group({ tabIds });
+
+    try {
+      const cIdentity = await browser.contextualIdentities.get(cookieStoreId);
+      browser.tabGroups.update(grpId, {
+        title: cIdentity.name,
+      });
+    } catch (e) {
+      // no container
+      // lets leave the title blank
+    }
   });
 }
 
@@ -33,10 +43,14 @@ async function grpAllTabsByCookieStore() {
       tabIds: [...v],
     });
 
-    if (browser.tabGroups) {
+    try {
+      const cIdentity = await browser.contextualIdentities.get(k);
       browser.tabGroups.update(grpId, {
-        title: k,
+        title: cIdentity.name,
       });
+    } catch (e) {
+      // no container
+      // lets leave the title blank
     }
   }
 }
