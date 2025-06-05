@@ -10,6 +10,6 @@
   "description": "group tabs which use the same container aka. cookieStore",
   "manifest_version": 2,
   "name": "Group Same Container Tabs",
-  "permissions": ["cookies", "tabs", "menus"],
-  "version": "1.0.0"
+  "permissions": ["cookies", "tabs", "menus", "tabGroups"],
+  "version": "1.0.1"
 }
