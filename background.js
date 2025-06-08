@@ -11,6 +11,7 @@ async function grpTabsByCookieStore(all_tabs, cookieStoreIds) {
       const cIdentity = await browser.contextualIdentities.get(cookieStoreId);
       browser.tabGroups.update(grpId, {
         title: cIdentity.name,
+        collapsed: true,
       });
     } catch (e) {
       // no container
@@ -47,6 +48,7 @@ async function grpAllTabsByCookieStore() {
       const cIdentity = await browser.contextualIdentities.get(k);
       browser.tabGroups.update(grpId, {
         title: cIdentity.name,
+        collapsed: true,
       });
     } catch (e) {
       // no container
